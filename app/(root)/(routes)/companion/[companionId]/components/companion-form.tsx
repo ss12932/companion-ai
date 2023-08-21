@@ -103,7 +103,7 @@ const CompanionForm: React.FC<CompanionFormProps> = ({
       }
 
       toast({
-        description: "Success",
+        description: "Your companion has been successfully created!",
       });
 
       router.refresh();
