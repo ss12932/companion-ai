@@ -97,21 +97,23 @@ const CompanionForm: React.FC<CompanionFormProps> = ({
       if (initialData) {
         // update companion functionality
         await axios.patch(`/api/companion/${initialData.id}`, values);
+        toast({
+          description: "Your companion has been successfully edited!",
+        });
       } else {
         // create companion functionality
         await axios.post("/api/companion", values);
+        toast({
+          description: "Your companion has been successfully created!",
+        });
       }
-
-      toast({
-        description: "Your companion has been successfully created!",
-      });
 
       router.refresh();
       router.push("/");
     } catch (error) {
       toast({
         variant: "destructive",
-        description: "Something went wrong",
+        description: "Something went wrong. Please try again later",
       });
     }
   };
