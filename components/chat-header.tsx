@@ -39,11 +39,14 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
 
   const onDelete = async () => {
     try {
-      await axios.delete(`/api/companions/${companion.id}`);
+      await axios.delete(`/api/companion/${companion.id}`);
 
       toast({
         description: "Companion deleted successfully.",
       });
+      // refresh all server components once deleted the companion model and redirect to home page
+      router.refresh();
+      router.push("/");
     } catch (error) {
       toast({
         description: "Something went wrong. Please try again later.",
