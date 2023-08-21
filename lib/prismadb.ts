@@ -4,7 +4,7 @@ declare global {
   var prisma: PrismaClient | undefined;
 }
 // stop HMR instantiating multiple instances of prisma client
-const prisma = global.prisma || new PrismaClient();
-if (process.env.NODE_ENV !== "production") global.prisma = prisma;
+const prismadb = global.prisma || new PrismaClient();
+if (process.env.NODE_ENV !== "production") global.prisma = prismadb;
 
-export default prisma;
+export default prismadb;

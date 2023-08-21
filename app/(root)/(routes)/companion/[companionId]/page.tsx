@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+import prismadb from "@/lib/prismadb";
 import CompanionForm from "./components/companion-form";
 
 interface CompanionIdPageProps {
@@ -10,13 +10,13 @@ interface CompanionIdPageProps {
 const CompanionIdPage = async ({ params }: CompanionIdPageProps) => {
   // TODO: check subscription status
 
-  const companion = await prisma.companion.findUnique({
+  const companion = await prismadb.companion.findUnique({
     where: {
       id: params.companionId,
     },
   });
 
-  const categories = await prisma.category.findMany();
+  const categories = await prismadb.category.findMany();
 
   return <CompanionForm initialData={companion} categories={categories} />;
 };
