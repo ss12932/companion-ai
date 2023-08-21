@@ -9,7 +9,7 @@ export const Sidebar = () => {
   const router = useRouter();
   const routes = [
     { icon: Home, href: "/", label: "Home", isPro: false },
-    { icon: Plus, href: "/companion/new", label: "Home", isPro: true },
+    { icon: Plus, href: "/companion/new", label: "Create", isPro: true },
     { icon: Settings, href: "/settings", label: "Settings", isPro: false },
   ];
 
