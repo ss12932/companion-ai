@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/(root)/page.tsx"
+    "app/(root)/page.tsx",
+    "app/api/chat/[chatId]"
   ],
   "exclude": ["node_modules"]
 }
